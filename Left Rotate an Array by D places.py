@@ -36,6 +36,7 @@ class Solution:
             for i in range(N - D, N):
                 A[i] = temp[i - (N - D)]
             return A
+        
                 
 
 

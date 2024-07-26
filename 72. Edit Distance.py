@@ -32,6 +32,23 @@
 # 0 <= word1.length, word2.length <= 500
 # word1 and word2 consist of lowercase English letters.
 
+#using recurssion but TLE
+class Solution:
+    def minDistance(self, word1: str, word2: str) -> int:
+        m=len(word1)
+        n=len(word2)
+
+        if m == 0:
+            return n
+        elif n == 0:
+            return m
+        
+        if word1[m-1]==word2[n-1]:
+            return self.minDistance(word1[:m-1],word2[:n-1])
+        else:
+            return 1+min(self.minDistance(word1[:m-1],word2), self.minDistance(word1,word2[:n-1]),self.minDistance(word1[:m-1],word2[:n-1]))
+        
+#with memoization
 class Solution:
     def __init__(self):
         self.memo = {}

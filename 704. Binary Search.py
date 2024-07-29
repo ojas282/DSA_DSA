@@ -23,7 +23,7 @@
 # All the integers in nums are unique.
 # nums is sorted in ascending order.
 
-
+#iterative approach
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
         low = 0
@@ -39,3 +39,19 @@ class Solution:
             elif target < nums[mid]:
                 high = mid-1
         return -1
+
+#using recurssion  
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        return self.binarySearch(nums, 0, len(nums) - 1, target)
+    
+    def binarySearch(self, nums: List[int], low: int, high: int, target: int) -> int:
+        if low > high:
+            return -1
+        mid = (low + high) // 2 
+        if nums[mid] == target: 
+            return mid
+        elif target > nums[mid]:
+            return self.binarySearch(nums, mid + 1, high, target)
+        else:
+            return self.binarySearch(nums, low, mid - 1, target)

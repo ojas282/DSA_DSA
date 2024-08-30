@@ -17,8 +17,6 @@
 # 1 <= arr.size() <= 106
 # 1 <= arr[i] <= 106
 
-
-
 #{ 
  # Driver Code Starts
 #Initial Template for Python 3
@@ -28,10 +26,10 @@
 
 '''
 # Node Class
-	class Node:
-	    def __init__(self, data):   # data -> value stored in node
-	        self.data = data
-	        self.next = None
+    class Node:
+        def __init__(self, data):   # data -> value stored in node
+            self.data = data
+            self.next = None
 '''
 class Solution:
     def constructLL(self, arr):
@@ -47,6 +45,7 @@ class Solution:
         return head
             
         # code here
+
 
 #{ 
  # Driver Code Starts.

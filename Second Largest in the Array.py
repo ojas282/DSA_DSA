@@ -1,4 +1,4 @@
-#User function Template for python3
+.#User function Template for python3
 # Given an array arr, return the second largest distinct element from an array. If the second largest element doesn't exist then return -1.
 
 # Examples:

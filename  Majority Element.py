@@ -51,3 +51,30 @@
 # 1 <= 'n' <= 10000
 # 0 <= 'arr[i]' <= 10^9
 
+
+
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+        cnt = 0
+        ele = None
+        for i in range(0,len(nums)):
+            if cnt == 0:
+                cnt = 1
+                ele = nums[i]
+            elif nums[i] == ele:
+                cnt +=1
+            else:
+                cnt -=1
+        return ele
+    
+    def majorityElement(v: [int]) -> int:
+    hashMap = {}
+    for i in v:
+        if i in hashMap:
+            hashMap[i]+=1
+        else:
+            hashMap[i]=1
+    half = len(v)//2
+    for i in hashMap:
+        if hashMap[i]>half:
+            return i
